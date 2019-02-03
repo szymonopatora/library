@@ -1,4 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
     <groupId>pl.sda</groupId>
     <artifactId>library</artifactId>
     <version>1.0.0</version>

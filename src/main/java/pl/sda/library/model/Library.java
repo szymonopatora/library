@@ -2,24 +2,26 @@ package pl.sda.library.model;
 
 import pl.sda.library.model.Book;
 
+import java.io.Serializable;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
-public class Library {
-   private List<Book> books;
+public class Library<T extends Serializable> {
 
-    public List<Book> getBooks() {
+   private List<T> books;
+
+    public List<T> getBooks() {
         //return books;
         return Collections.unmodifiableList(books); //chroni przed nieporządanymi modyfikacjami listy, poza klasą "Library"
     }
 
-    public void setBooks(List<Book> books) {
+    public void setBooks(List<T> books) {
         this.books = new LinkedList<>(books);
     }
 
-    public void addBook (Book book) {
+    public void addBook (T book) {
         if (books==null) {
             books= new LinkedList<>();
         }
