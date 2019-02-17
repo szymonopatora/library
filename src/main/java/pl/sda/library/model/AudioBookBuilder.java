@@ -21,7 +21,6 @@ public class AudioBookBuilder {
         return this;
     }
 
-
     public AudioBookBuilder authorLastName(String authorLastName) {
         this.authorLastName = authorLastName;
         return this;
@@ -38,9 +37,7 @@ public class AudioBookBuilder {
         return this;
     }
 
-
     public AudioBook build() {
-
         AudioBook book = new AudioBook();
         Creator author = new Creator();
         author.setFirstName(authorFirstName);
@@ -52,6 +49,5 @@ public class AudioBookBuilder {
         formatOptional.orElse(Format.MP_3);//instead of if statement
         book.setDuration(duration);
         return book;
-
     }
 }

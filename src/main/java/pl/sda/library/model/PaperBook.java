@@ -16,6 +16,16 @@ public class PaperBook extends Book implements PaperMedium {
     }
 
     @Override
+    public int getPageCount() {
+        return pageCount;
+    }
+
+    @Override
+    public void setPageCount(int pageCount) {
+        this.pageCount = pageCount;
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -33,19 +43,9 @@ public class PaperBook extends Book implements PaperMedium {
     public String toString() {
         return "PaperBook{" +
                 "cover=" + cover +
-                ", author=" + author +
-                ", title='" + title + '\'' +
+                ", pageCount=" + pageCount +
+                ", author=" +  '\'' +
                 "} " + super.toString();
     }
 
-    @Override
-    public int getPageCount() {
-        return pageCount;
-    }
-
-    @Override
-    public void setPageCount(int pageCount) {
-        this.pageCount = pageCount;
-
-    }
 }

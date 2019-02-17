@@ -5,7 +5,6 @@ import java.util.Objects;
 public class Magazine extends MultiMedia implements PaperMedium {
 
     private int number;
-
     private int pageCount;
 
     Magazine() {

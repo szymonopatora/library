@@ -62,7 +62,7 @@ public class FilterByTypeCommandTest {
         command.execute();
 
         //then
-        verify(printStreamMock, times(1)).println("Type:");
+        verify(printStreamMock, times(1)).println("Typ:");
         verify(printStreamMock, times(1)).println(movie1);
         verify(printStreamMock, times(1)).println(movie2);
         verify(printStreamMock, never()).println(book);

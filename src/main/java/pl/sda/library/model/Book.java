@@ -4,12 +4,9 @@ import java.io.Serializable;
 import java.util.Objects;
 
 public abstract class Book extends MultiMedia implements Serializable {
+
     protected Creator author;
 
-
-    Book() {
-        super();
-    }
 
     public Creator getAuthor() {
         return author;
@@ -35,9 +32,9 @@ public abstract class Book extends MultiMedia implements Serializable {
 
     @Override
     public String toString() {
-        return "Book{" +
+        return "{" +
                 "author=" + author +
-                ", title='" + title + '\'' +
-                '}';
+                + '\'' +
+                '}'+ super.toString();
     }
 }

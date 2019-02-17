@@ -3,9 +3,14 @@ package pl.sda.library.model;
 import java.util.Objects;
 
 public abstract class MultiMedia {
+
     protected String title;
 
-    public MultiMedia(String title) {
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
         this.title = title;
     }
 
@@ -22,21 +27,9 @@ public abstract class MultiMedia {
         return Objects.hash(title);
     }
 
-    public MultiMedia() {
-
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     @Override
     public String toString() {
-        return "MultiMedia{" +
+        return "{" +
                 "title='" + title + '\'' +
                 '}';
     }

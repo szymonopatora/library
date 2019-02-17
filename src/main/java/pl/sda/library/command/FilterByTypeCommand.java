@@ -5,7 +5,9 @@ import pl.sda.library.model.MultiMedia;
 
 import java.io.InputStream;
 import java.io.PrintStream;
+import java.io.StreamCorruptedException;
 import java.util.Scanner;
+import java.util.stream.Stream;
 
 public class FilterByTypeCommand implements Command {
 
@@ -31,6 +33,7 @@ public class FilterByTypeCommand implements Command {
                 printStream.println(multiMedia);
             }
         }
-        //library.getMedia().forEach(printStream::println);
+        Stream<MultiMedia> stream= library.getMedia().stream().parallel().sequential();
+        //Stream<MultiMedia> parallelStream= library.getMedia().stream();
     }
 }

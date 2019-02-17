@@ -2,6 +2,7 @@ package pl.sda.library;
 
 import pl.sda.library.command.Command;
 import pl.sda.library.command.DisplayMultiMediaCommand;
+import pl.sda.library.command.FilterByTypeCommand;
 import pl.sda.library.model.*;
 
 import java.util.HashMap;
@@ -17,7 +18,7 @@ public class Main {
         Map<String, Command> commands = new HashMap<>();
         commands.put("exit", () -> System.exit(0));
         commands.put("display", new DisplayMultiMediaCommand(library, System.out));
-        commands.put("sort", new DisplayMultiMediaCommand(library, System.out));
+        commands.put("filter", new FilterByTypeCommand(library, System.out));
         while (true) {
             System.out.println("Podaj komendę");
             String commandName = scanner.nextLine();
@@ -25,7 +26,7 @@ public class Main {
             Optional.ofNullable(command).ifPresent(Command::execute);
             //Optional.ofNullable(command).ifPresent(c->c.execute());
         }
-        //library.getMedia().forEach(System.out::println);
+
 
     }
 
