@@ -5,10 +5,11 @@ import java.util.Optional;
 
 public class AudioBookBuilder {
 
-    protected String authorFirstName;
-    protected String authorLastName;
+    private String authorFirstName;
+    private String authorLastName;
     protected String title;
-    protected Format format;
+    private Format format;
+    private int duration;
 
     public AudioBookBuilder format(Format format) {
         this.format = format;
@@ -32,18 +33,24 @@ public class AudioBookBuilder {
         return this;
     }
 
+    public AudioBookBuilder duration (int duration) {
+        this.duration = duration;
+        return this;
+    }
+
+
     public AudioBook build() {
 
         AudioBook book = new AudioBook();
-        Author author = new Author();
+        Creator author = new Creator();
         author.setFirstName(authorFirstName);
         author.setLastName(authorLastName);
         book.setAuthor(author);
         book.setTitle(title);
         book.setFormat(Optional.ofNullable(this.format).orElse(Format.MP_3));
-        Optional<Format> formatOptional = Optional
-                .ofNullable(this.format);
+        Optional<Format> formatOptional = Optional.ofNullable(this.format);
         formatOptional.orElse(Format.MP_3);//instead of if statement
+        book.setDuration(duration);
         return book;
 
     }
