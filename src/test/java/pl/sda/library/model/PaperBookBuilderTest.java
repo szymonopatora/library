@@ -13,12 +13,14 @@ public class PaperBookBuilderTest {
         String authorLastName = "Sienkiewicz";
         String title = "W pustyni i w puszczy";
         Cover cover = Cover.SOFT;
+        int pageCount = 100;
         //when
         PaperBook book = new PaperBookBuilder()
                 .authorFirstName(authorFirstName)
                 .authorLastName(authorLastName)
                 .title(title)
                 .cover(cover)
+                .pageCount(pageCount)
                 .build();
 
         //then
@@ -28,6 +30,8 @@ public class PaperBookBuilderTest {
         assertEquals(authorLastName, book.getAuthor().getLastName());
         assertEquals(title, book.getTitle());
         assertEquals(cover,book.getCover());
+        assertEquals(pageCount,book.getPageCount());
+
     }
 
 }

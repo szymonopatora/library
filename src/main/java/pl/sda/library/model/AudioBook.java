@@ -2,11 +2,18 @@ package pl.sda.library.model;
 
 import java.util.Objects;
 
-public class AudioBook extends Book {
+public class AudioBook extends Book implements DigitalMedium {
 
-    public Format format;
+    private Format format;
+    private int duration;
+
     AudioBook() {
 
+    }
+
+    public AudioBook(Format format, int duration) {
+        this.format = format;
+        this.duration = duration;
     }
 
     public Format getFormat() {
@@ -18,23 +25,35 @@ public class AudioBook extends Book {
     }
 
     @Override
+    public int getDuration() {
+        return duration;
+    }
+
+    @Override
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         AudioBook audioBook = (AudioBook) o;
-        return Objects.equals(format, audioBook.format);
+        return duration == audioBook.duration &&
+                format == audioBook.format;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), format);
+        return Objects.hash(super.hashCode(), format, duration);
     }
 
     @Override
     public String toString() {
-        return "PaperBook{" +
+        return "AudioBook{" +
                 "format=" + format +
+                ", duration=" + duration +
                 ", author=" + author +
                 ", title='" + title + '\'' +
                 "} " + super.toString();

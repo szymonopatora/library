@@ -3,27 +3,20 @@ package pl.sda.library.model;
 import java.io.Serializable;
 import java.util.Objects;
 
-public abstract class Book implements Serializable {
-    protected Author author;
-    protected String title;
+public abstract class Book extends MultiMedia implements Serializable {
+    protected Creator author;
+
 
     Book() {
+        super();
     }
 
-    public Author getAuthor() {
+    public Creator getAuthor() {
         return author;
     }
 
-    public void setAuthor(Author author) {
+    public void setAuthor(Creator author) {
         this.author = author;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
     }
 
     @Override

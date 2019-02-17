@@ -9,6 +9,7 @@ public class PaperBookBuilder {
     protected String authorLastName;
     protected String title;
     private Cover cover;
+    private int pageCount;
 
     public PaperBookBuilder cover(Cover cover) {
         this.cover = cover;
@@ -34,7 +35,7 @@ public class PaperBookBuilder {
 
     public PaperBook build() {
         PaperBook book = new PaperBook();
-        Author author = new Author();
+        Creator author = new Creator();
         author.setFirstName(authorFirstName);
         author.setLastName(authorLastName);
         book.setAuthor(author);
@@ -46,4 +47,11 @@ public class PaperBookBuilder {
         return book;
 
     }
+
+    public PaperBookBuilder pageCount(int pageCount) {
+        this.pageCount=pageCount;
+        return this;
+
+    }
+
 }

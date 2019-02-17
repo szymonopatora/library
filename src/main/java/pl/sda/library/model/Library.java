@@ -1,31 +1,28 @@
 package pl.sda.library.model;
 
-import pl.sda.library.model.Book;
-
-import java.io.Serializable;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
-public class Library<T extends Serializable> {
+public class Library<T extends MultiMedia> {
 
-   private List<T> books;
+   private List<T> media;
 
-    public List<T> getBooks() {
-        //return books;
-        return Collections.unmodifiableList(books); //chroni przed nieporządanymi modyfikacjami listy, poza klasą "Library"
+    public List<T> getMedia() {
+        //return media;
+        return Collections.unmodifiableList(media); //chroni przed nieporządanymi modyfikacjami listy, poza klasą "Library"
     }
 
-    public void setBooks(List<T> books) {
-        this.books = new LinkedList<>(books);
+    public void setMedia(List<T> media) {
+        this.media = new LinkedList<>(media);
     }
 
-    public void addBook (T book) {
-        if (books==null) {
-            books= new LinkedList<>();
+    public void addMedia(T book) {
+        if (media ==null) {
+            media = new LinkedList<>();
         }
-        books.add(book);
+        media.add(book);
     }
 
     @Override
@@ -33,18 +30,18 @@ public class Library<T extends Serializable> {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Library library = (Library) o;
-        return Objects.equals(books, library.books);
+        return Objects.equals(media, library.media);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(books);
+        return Objects.hash(media);
     }
 
     @Override
     public String toString() {
         return "Library{" +
-                "books=" + books +
+                "media=" + media +
                 '}';
     }
 }

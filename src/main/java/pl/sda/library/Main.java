@@ -2,84 +2,114 @@ package pl.sda.library;
 
 import pl.sda.library.model.*;
 
-import static pl.sda.library.model.Cover.HARD;
-
 
 public class Main {
     public static void main(String[] args) {
-        Library<Book> library = new Library<>();
-        library.addBook(new PaperBookBuilder()
+        Library<MultiMedia> library = new Library<>();
+        library.addMedia(new PaperBookBuilder()
                 .authorFirstName("Carol")
                 .authorLastName("Lewis")
                 .title("Lew, czarownica i stara szafa")
                 .build());
-        library.addBook(new PaperBookBuilder()
+        library.addMedia(new PaperBookBuilder()
                 .authorFirstName("Andrzej")
                 .authorLastName("Sapkowski")
                 .title("Krew Elfów")
                 .build());
-        library.addBook(new PaperBookBuilder()
+        library.addMedia(new PaperBookBuilder()
                 .authorFirstName("Maria")
                 .authorLastName("Zmierczak")
                 .title("Spór o istotę fszyzmu")
                 .build());
-        library.addBook(new PaperBookBuilder()
+        library.addMedia(new PaperBookBuilder()
                 .authorFirstName("Michaił")
                 .authorLastName("Bułhakow")
                 .title("Mistrz i Małgorzata")
                 .build());
-        library.addBook(new PaperBookBuilder()
+        library.addMedia(new PaperBookBuilder()
                 .authorFirstName("Michalina")
                 .authorLastName("Wisłocka")
                 .title("Sztuka kochania")
                 .build());
-        library.addBook(new PaperBookBuilder()
+        library.addMedia(new PaperBookBuilder()
                 .authorFirstName("Niccolo")
                 .authorLastName("Machiavelli")
                 .title("Książę")
                 .build());
-        library.addBook(new PaperBookBuilder()
+        library.addMedia(new PaperBookBuilder()
                 .authorFirstName("Sun")
                 .authorLastName("Tzu")
                 .title("Sztuka wojny")
                 .build());
-        library.addBook(new AudioBookBuilder()
+        library.addMedia(new AudioBookBuilder()
                 .authorFirstName("Carol")
                 .authorLastName("Lewis")
                 .title("Lew, czarownica i stara szafa")
                 .build());
-        library.addBook(new AudioBookBuilder()
+        library.addMedia(new AudioBookBuilder()
                 .authorFirstName("Andrzej")
                 .authorLastName("Sapkowski")
                 .title("Krew Elfów")
                 .build());
-        library.addBook(new AudioBookBuilder()
+        library.addMedia(new AudioBookBuilder()
                 .authorFirstName("Maria")
                 .authorLastName("Zmierczak")
                 .title("Spór o istotę fszyzmu")
                 .build());
-        library.addBook(new AudioBookBuilder()
+        library.addMedia(new AudioBookBuilder()
                 .authorFirstName("Michaił")
                 .authorLastName("Bułhakow")
                 .title("Mistrz i Małgorzata")
                 .build());
-        library.addBook(new AudioBookBuilder()
+        library.addMedia(new AudioBookBuilder()
                 .authorFirstName("Michalina")
                 .authorLastName("Wisłocka")
                 .title("Sztuka kochania")
                 .build());
-        library.addBook(new AudioBookBuilder()
+        library.addMedia(new AudioBookBuilder()
                 .authorFirstName("Niccolo")
                 .authorLastName("Machiavelli")
                 .title("Książę")
                 .build());
-        library.addBook(new AudioBookBuilder()
+        library.addMedia(new AudioBookBuilder()
                 .authorFirstName("Sun")
                 .authorLastName("Tzu")
                 .title("Sztuka wojny")
                 .build());
-        for (Book book: library.getBooks()) {
-            System.out.println(book);
-        }
+        library.addMedia(new MagazineBuilder()
+                .title("Motor")
+                .number(15)
+                .pageCount(32)
+                .build());
+        library.addMedia(new MagazineBuilder()
+                .title("Newsweek")
+                .number(14)
+                .pageCount(64)
+                .build());
+        library.addMedia(new MagazineBuilder()
+                .title("Polityka")
+                .number(10)
+                .pageCount(50)
+                .build());
+        library.addMedia(new MovieBuilder()
+                .title("Skazani na Shawshank")
+                .directorFirstName("Frank")
+                .directorLastName("Darabont")
+                .duration(120)
+                .build());
+        library.addMedia(new MovieBuilder()
+                .title("Zielona mila")
+                .directorFirstName("Frank")
+                .directorLastName("Darabont")
+                .duration(180)
+                .build());
+        library.addMedia(new MovieBuilder()
+                .title("Nietykalni")
+                .directorFirstName("Olivier")
+                .directorLastName("Nakache")
+                .duration(110)
+                .build());
+        library.getMedia().forEach(System.out::println);
+
     }
 }

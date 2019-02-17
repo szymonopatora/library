@@ -1,6 +1,5 @@
 package pl.sda.library.model;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -14,15 +13,15 @@ public class LibraryTest {
 
         //given
         Library library = new Library();
-        library.setBooks(new LinkedList<Book>());
+        library.setMedia(new LinkedList<Book>());
         Book book = new PaperBook();
         book.setTitle("W pustyni i w puszczy");
 
         //when
-        library.addBook(book);
+        library.addMedia(book);
 
         //then
-        assertEquals(Arrays.asList(book), library.getBooks());
+        assertEquals(Arrays.asList(book), library.getMedia());
     }
     @Test
     public void shouldAddBookWhenListOfBooksIsNull() {
@@ -33,9 +32,9 @@ public class LibraryTest {
                 .title("W pustyni i w puszczy")
                 .build();
         //when
-        library.addBook(book);
+        library.addMedia(book);
 
         //then
-        assertEquals(Arrays.asList(book), library.getBooks());
+        assertEquals(Arrays.asList(book), library.getMedia());
     }
 }
