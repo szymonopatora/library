@@ -17,6 +17,7 @@ public class Main {
         Map<String, Command> commands = new HashMap<>();
         commands.put("exit", () -> System.exit(0));
         commands.put("display", new DisplayMultiMediaCommand(library, System.out));
+        commands.put("sort", new DisplayMultiMediaCommand(library, System.out));
         while (true) {
             System.out.println("Podaj komendę");
             String commandName = scanner.nextLine();
