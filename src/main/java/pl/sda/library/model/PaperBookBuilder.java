@@ -33,6 +33,11 @@ public class PaperBookBuilder {
         return this;
     }
 
+    public PaperBookBuilder pageCount(int pageCount) {
+        this.pageCount=pageCount;
+        return this;
+    }
+
     public PaperBook build() {
         PaperBook book = new PaperBook();
         Creator author = new Creator();
@@ -44,14 +49,8 @@ public class PaperBookBuilder {
         Optional<Cover>coverOptional=Optional
                 .ofNullable(this.cover);
         coverOptional.orElse(Cover.SOFT);//instead of if statement
+        book.setPageCount(pageCount);
         return book;
-
-    }
-
-    public PaperBookBuilder pageCount(int pageCount) {
-        this.pageCount=pageCount;
-        return this;
-
     }
 
 }

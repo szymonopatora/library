@@ -16,7 +16,7 @@ public class MovieBuilder {
         return this;
     }
     public MovieBuilder directorLastName (String directorLastName) {
-        this.directorFirstName=directorFirstName;
+        this.directorLastName=directorLastName;
         return this;
     }
     public MovieBuilder duration (int duration) {

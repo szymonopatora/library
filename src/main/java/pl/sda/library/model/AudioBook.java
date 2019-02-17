@@ -11,11 +11,6 @@ public class AudioBook extends Book implements DigitalMedium {
 
     }
 
-    public AudioBook(Format format, int duration) {
-        this.format = format;
-        this.duration = duration;
-    }
-
     public Format getFormat() {
         return format;
     }
@@ -54,8 +49,7 @@ public class AudioBook extends Book implements DigitalMedium {
         return "AudioBook{" +
                 "format=" + format +
                 ", duration=" + duration +
-                ", author=" + author +
-                ", title='" + title + '\'' +
+                 '\'' +
                 "} " + super.toString();
     }
 }
