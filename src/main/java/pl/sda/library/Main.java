@@ -1,10 +1,32 @@
 package pl.sda.library;
 
+import pl.sda.library.command.Command;
 import pl.sda.library.model.*;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Scanner;
 
 
 public class Main {
     public static void main(String[] args) {
+        Library<MultiMedia> library = getMultiMediaLibrary();
+        Scanner scanner = new Scanner(System.in);
+        Map<String, Command> commands = new HashMap<>();
+        commands.put("exit", () -> System.exit(0));
+        while (true) {
+            System.out.println("Podaj komendę");
+            String commandName = scanner.nextLine();
+            Command command = commands.get(commandName);
+            Optional.ofNullable(command).ifPresent(Command::execute);
+            //Optional.ofNullable(command).ifPresent(c->c.execute());
+        }
+        //library.getMedia().forEach(System.out::println);
+
+    }
+
+    private static Library<MultiMedia> getMultiMediaLibrary() {
         Library<MultiMedia> library = new Library<>();
         library.addMedia(new PaperBookBuilder()
                 .authorFirstName("Carol")
@@ -109,7 +131,6 @@ public class Main {
                 .directorLastName("Nakache")
                 .duration(110)
                 .build());
-        library.getMedia().forEach(System.out::println);
-
+        return library;
     }
 }
