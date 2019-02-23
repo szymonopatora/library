@@ -26,8 +26,6 @@ public class Main {
             Optional.ofNullable(command).ifPresent(Command::execute);
             //Optional.ofNullable(command).ifPresent(c->c.execute());
         }
-
-
     }
 
     private static Library<MultiMedia> getMultiMediaLibrary() {

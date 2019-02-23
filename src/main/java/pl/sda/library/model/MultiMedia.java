@@ -13,6 +13,9 @@ public abstract class MultiMedia {
     public void setTitle(String title) {
         this.title = title;
     }
+    public String getType() {
+        return getClass().getSimpleName();
+    }
 
     @Override
     public boolean equals(Object o) {

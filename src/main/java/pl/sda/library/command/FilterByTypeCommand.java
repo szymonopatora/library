@@ -24,16 +24,21 @@ public class FilterByTypeCommand implements Command {
 
     @Override
     public void execute() {
-        //TODO
         Scanner scanner = new Scanner(System.in);
         printStream.println("Typ:");
         String type = scanner.nextLine();
-        for (MultiMedia multiMedia:library.getMedia()) {
+        /*for (MultiMedia multiMedia:library.getMedia()) {
             if (multiMedia.getClass().getSimpleName().equals(type)) {
                 printStream.println(multiMedia);
             }
-        }
-        Stream<MultiMedia> stream= library.getMedia().stream().parallel().sequential();
+        }*/
+
+                library.getMedia().stream()
+                        .filter(x->x.getType().equals(type))
+                        .forEach(printStream::println);
+
+
+
         //Stream<MultiMedia> parallelStream= library.getMedia().stream();
     }
 }

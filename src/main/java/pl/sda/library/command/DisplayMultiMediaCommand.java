@@ -17,7 +17,7 @@ public class DisplayMultiMediaCommand implements Command {
 
     @Override
     public void execute() {
-        //TODO
+
         library.getMedia().forEach(printStream::println);
     }
 }
