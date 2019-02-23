@@ -12,7 +12,7 @@ public class AudioBookBuilderTest {
         String authorFirstName = "Henryk";
         String authorLastName = "Sienkiewicz";
         String title = "W pustyni i w puszczy";
-        Format format = Format.MP_3;
+        Format format = Format.MP3;
         int duration =1000;
         //when
         AudioBook book = new AudioBookBuilder()
