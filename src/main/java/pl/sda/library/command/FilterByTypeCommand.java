@@ -33,12 +33,10 @@ public class FilterByTypeCommand implements Command {
             }
         }*/
 
-                library.getMedia().stream()
-                        .filter(x->x.getType().equals(type))
-                        .forEach(printStream::println);
+        library.getMedia().stream()
+                .filter(x -> x.getType().equals(type))
+                .forEach(printStream::println);
 
 
-
-        //Stream<MultiMedia> parallelStream= library.getMedia().stream();
     }
 }
