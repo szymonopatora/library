@@ -18,24 +18,22 @@ public class FilterByTypeCommand implements Command {
     public FilterByTypeCommand(Library<MultiMedia> library, PrintStream printStream) {
         this.library = library;
         this.printStream = printStream;
-
     }
-
 
     @Override
     public void execute() {
         Scanner scanner = new Scanner(System.in);
         printStream.println("Typ:");
         String type = scanner.nextLine();
+        library.getMedia().stream()
+                .filter(x -> x.getType().equals(type))
+                .forEach(printStream::println);
         /*for (MultiMedia multiMedia:library.getMedia()) {
             if (multiMedia.getClass().getSimpleName().equals(type)) {
                 printStream.println(multiMedia);
             }
         }*/
 
-        library.getMedia().stream()
-                .filter(x -> x.getType().equals(type))
-                .forEach(printStream::println);
 
 
     }
