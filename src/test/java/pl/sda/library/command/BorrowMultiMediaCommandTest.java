@@ -51,7 +51,7 @@ public class BorrowMultiMediaCommandTest {
         verify(printStreamMock, times(1))
                 .println("Tytuł: ");
         verify(printStreamMock, times(1))
-                .println("Imię osoby wypozyczającej: ");
+                .println("Imię osoby wypożyczającej: ");
         verify(printStreamMock, times(1))
                 .println("Nazwisko osoby wypożyczającej: ");
         MultiMediaState state = movie.getState();
@@ -81,10 +81,11 @@ public class BorrowMultiMediaCommandTest {
         verify(printStreamMock, times(1))
                 .println("Tytuł: ");
         verify(printStreamMock, times(1))
-                .println("Imię osoby wypozyczającej: ");
+                .println("Imię osoby wypożyczającej: ");
         verify(printStreamMock, times(1))
                 .println("Nazwisko osoby wypożyczającej: ");
-        verify(printStreamMock, times(1)).println("Książka jest już wypożyczona");
+        verify(printStreamMock, times(1))
+                .println("Książka jest już wypożyczona");
         MultiMediaState state = movie.getState();
         assertTrue(state instanceof BorrowedState);
         assertNull(null, ((BorrowedState) state).getFirstName());
@@ -109,7 +110,7 @@ public class BorrowMultiMediaCommandTest {
         verify(printStreamMock, times(1))
                 .println("Tytuł: ");
         verify(printStreamMock, times(1))
-                .println("Imię osoby wypozyczającej: ");
+                .println("Imię osoby wypożyczającej: ");
         verify(printStreamMock, times(1))
                 .println("Nazwisko osoby wypożyczającej: ");
         verify(printStreamMock, times(1))
