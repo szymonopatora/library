@@ -7,7 +7,7 @@ import java.util.Objects;
 
 public class Library<T extends MultiMedia> {
 
-   private List<T> media;
+   private List<T> media=new LinkedList<>();
 
     public List<T> getMedia() {
         //return media;
@@ -15,14 +15,12 @@ public class Library<T extends MultiMedia> {
     }
 
     public void setMedia(List<T> media) {
+        assert media !=null;
         this.media = new LinkedList<>(media);
     }
 
-    public void addMedia(T book) {
-        if (media ==null) {
-            media = new LinkedList<>();
-        }
-        media.add(book);
+    public void addMedia(T multiMedia) {
+        media.add(multiMedia);
     }
 
     @Override

@@ -44,9 +44,9 @@ public class AudioBookBuilder {
         author.setLastName(authorLastName);
         book.setAuthor(author);
         book.setTitle(title);
-        book.setFormat(Optional.ofNullable(this.format).orElse(Format.MP_3));
+        book.setFormat(Optional.ofNullable(this.format).orElse(Format.MP3));
         Optional<Format> formatOptional = Optional.ofNullable(this.format);
-        formatOptional.orElse(Format.MP_3);//instead of if statement
+        formatOptional.orElse(Format.MP3);//instead of if statement
         book.setDuration(duration);
         return book;
     }

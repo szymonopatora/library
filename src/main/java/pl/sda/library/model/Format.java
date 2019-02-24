@@ -2,7 +2,7 @@ package pl.sda.library.model;
 
 
     public enum Format {
-        MP_3("mp3"), FLAC("flac");
+        MP3("mp3"), FLAC("flac");
 
         private String name;
 
