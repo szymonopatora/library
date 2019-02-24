@@ -20,21 +20,22 @@ public abstract class Book extends MultiMedia implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
         Book book = (Book) o;
-        return Objects.equals(author, book.author) &&
-                Objects.equals(title, book.title);
+        return Objects.equals(author, book.author);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(author, title);
+        return Objects.hash(super.hashCode(), author);
     }
 
     @Override
     public String toString() {
-        return "{" +
+        return "Book{" +
                 "author=" + author +
-                + '\'' +
-                '}'+ super.toString();
+                ", title='" + title + '\'' +
+                ", state=" + state +
+                '}';
     }
 }

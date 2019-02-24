@@ -44,8 +44,9 @@ public class PaperBook extends Book implements PaperMedium {
         return "PaperBook{" +
                 "cover=" + cover +
                 ", pageCount=" + pageCount +
-                ", author=" +  '\'' +
-                "} " + super.toString();
+                ", author=" + author +
+                ", title='" + title + '\'' +
+                ", state=" + state +
+                '}';
     }
-
 }

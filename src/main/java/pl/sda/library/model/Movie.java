@@ -49,7 +49,8 @@ public class Movie extends MultiMedia implements DigitalMedium {
         return "Movie{" +
                 "director=" + director +
                 ", duration=" + duration +
-                 '\'' +
-                "} " + super.toString();
+                ", title='" + title + '\'' +
+                ", state=" + state +
+                '}';
     }
 }

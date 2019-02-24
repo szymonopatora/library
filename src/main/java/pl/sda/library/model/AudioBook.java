@@ -49,7 +49,9 @@ public class AudioBook extends Book implements DigitalMedium {
         return "AudioBook{" +
                 "format=" + format +
                 ", duration=" + duration +
-                 '\'' +
-                "} " + super.toString();
+                ", author=" + author +
+                ", title='" + title + '\'' +
+                ", state=" + state +
+                '}';
     }
 }

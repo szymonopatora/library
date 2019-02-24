@@ -31,6 +31,7 @@ public class MovieBuilder {
         director.setLastName(directorLastName);
         movie.setDirector(director);
         movie.setDuration(duration);
+        movie.setState(new ReturnedState());
         return movie;
     }
 
