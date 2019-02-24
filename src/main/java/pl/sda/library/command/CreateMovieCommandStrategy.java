@@ -31,7 +31,8 @@ public class CreateMovieCommandStrategy implements CreateMultiMediaStrategy{
 
     @Override
     public boolean isTypeCorrect(String type) {
-        return Objects.equals(type,MOVIE);
-    }
+        return Objects.equals(type,MOVIE); // zabezpieczenie na nulla
+        //MOVIE.equals(type);
+        }
 
 }
