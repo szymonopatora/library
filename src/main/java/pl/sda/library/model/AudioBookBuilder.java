@@ -48,6 +48,7 @@ public class AudioBookBuilder {
         Optional<Format> formatOptional = Optional.ofNullable(this.format);
         formatOptional.orElse(Format.MP3);//instead of if statement
         book.setDuration(duration);
+        book.setState(new ReturnedState());
         return book;
     }
 }

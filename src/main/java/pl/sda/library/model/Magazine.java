@@ -49,6 +49,7 @@ public class Magazine extends MultiMedia implements PaperMedium {
                 "number=" + number +
                 ", pageCount=" + pageCount +
                 ", title='" + title + '\'' +
-                "} " + super.toString();
+                ", state=" + state +
+                '}';
     }
 }
