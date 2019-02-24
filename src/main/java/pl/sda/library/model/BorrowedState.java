@@ -9,8 +9,11 @@ public class BorrowedState implements MultiMediaState {
     private String firstName;
     private String lastName;
 
-    public BorrowedState(PrintStream printStream) {
+    public BorrowedState() {
+        this.printStream = System.out;
+    }
 
+    public BorrowedState(PrintStream printStream) {
         this.printStream = printStream;
     }
 
